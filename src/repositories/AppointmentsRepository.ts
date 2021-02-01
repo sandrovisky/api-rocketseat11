@@ -2,7 +2,7 @@ import Appointment from '../models/Appointment'
 import {EntityRepository, Repository} from 'typeorm'
 
 @EntityRepository(Appointment)
-class appointmentsRepository extends Repository<Appointment> {
+class AppointmentsRepository extends Repository<Appointment> {
     public async findByDate (date: Date): Promise<Appointment | null> {
 
         const findAppointment = await this.findOne({
@@ -14,4 +14,4 @@ class appointmentsRepository extends Repository<Appointment> {
     }
 }
 
-export default appointmentsRepository
+export default AppointmentsRepository
