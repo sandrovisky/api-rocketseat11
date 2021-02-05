@@ -14,7 +14,7 @@ sessionsRouter.post('/', async (request, response) => {
             password
         })
 
-        user.password = "*******"
+        Object.defineProperty(user, 'password', {enumerable: false})
         
         return response.json({ user, token })
         
